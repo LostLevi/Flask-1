@@ -1,10 +1,12 @@
 from app import db
 from datetime import datetime
 import re
+from transliterate import translit
 
 def slugify(s):
     pattern = r'[^\w+]'
-    return re.sub(pattern, '-', s)
+    z = translit(s, reversed=True).lower()
+    return re.sub(pattern, '-', z)
 
 post_tags =db.Table('post_tags',
                     db.Column('post_id', db.Integer, db.ForeignKey('post.id')),

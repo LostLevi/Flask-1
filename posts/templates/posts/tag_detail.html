@@ -1,13 +1,8 @@
 {% extends 'base.html' %}
 
-{% block title %}
-  {{ tag.name }} posts
-{% endblock %}
+{% block title %}{{ tag.name }} posts{% endblock %}
 
-{% block content_title %}
-  Posts for <i>"{{ tag.name }}"</i>:
-
-{% endblock %}
+{% block content_title %} Posts for <i>"{{ tag.name }}"</i>:{% endblock %}
 
 {% block content %}
 <hr>
